@@ -6,18 +6,14 @@ import UserRoutes from "./routes/UserRoute.js";
 const app = express();
 // Middleware to parse JSON data in incoming requests
 app.use(express.json());
-
 /* MONGOOSE SETUP */
 // Define a different port for the server to listen on if the environment variable 'PORT' is set
 const PORT = 3000 || 9000;
+// app.listen(PORT, () => console.log(`Server Port: ${PORT}, DB connected`));
 // Import and connect to MongoDB using Mongoose
 mongoose
   .connect(
     "mongodb+srv://Priyanka:srcn1224@cluster0.mobsisi.mongodb.net/?retryWrites=true&w=majority"
-    // {
-    //   useNewUrlParser: true,
-    //   useUnifiedTopology: true,
-    // }
   )
   .then(() => {
     // Start the Express server and listen on the specified port
